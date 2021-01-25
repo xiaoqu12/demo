@@ -26,6 +26,15 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions><!-- 去掉springboot默认配置 -->
+
+                <!--本地关闭  上线打开-->
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+
+            </exclusions>
         </dependency>
 
 
@@ -42,7 +51,7 @@
     </dependencies>
 
     <build>
-        <finalName>demo01</finalName>
+<!--        <finalName>demo01</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
